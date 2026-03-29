@@ -1,14 +1,10 @@
-// ============================================================
-// Exercício 3 - Formato Agenda Telefônica
-// "José Antonio Santos Silva" → "Silva, José Antonio Santos"
-// ============================================================
-#include <iostream>
+
 #include <fstream>
 #include <sstream>
 #include <string>
 #include <vector>
 
-// Divide uma string em palavras pelo delimitador espaço
+
 std::vector<std::string> splitWords(const std::string& linha) {
     std::vector<std::string> palavras;
     std::istringstream iss(linha);
@@ -19,17 +15,17 @@ std::vector<std::string> splitWords(const std::string& linha) {
     return palavras;
 }
 
-// Formata nome para agenda: último sobrenome primeiro, vírgula, restante
+
 std::string formatarAgenda(const std::string& nomeCompleto) {
     std::vector<std::string> partes = splitWords(nomeCompleto);
 
     if (partes.empty()) return nomeCompleto;
     if (partes.size() == 1) return partes[0];
 
-    // Último nome vem primeiro
+   
     std::string ultimo = partes.back();
 
-    // Os demais nomes ficam depois da vírgula
+    
     std::string restante;
     for (int i = 0; i < (int)partes.size() - 1; i++) {
         if (i > 0) restante += " ";
