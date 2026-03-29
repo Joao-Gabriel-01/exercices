@@ -5,7 +5,7 @@
 #include <vector>
 #include <cctype>
 
-// Divide linha em palavras
+
 std::vector<std::string> splitWords(const std::string& linha) {
     std::vector<std::string> palavras;
     std::istringstream iss(linha);
@@ -16,14 +16,14 @@ std::vector<std::string> splitWords(const std::string& linha) {
     return palavras;
 }
 
-// Converte string para maiúsculas
+
 std::string toUpper(const std::string& s) {
     std::string r = s;
     for (char& c : r) c = toupper((unsigned char)c);
     return r;
 }
 
-// Retorna apenas a primeira letra maiúscula seguida de ponto: "Antonio" → "A."
+
 std::string inicial(const std::string& nome) {
     if (nome.empty()) return "";
     std::string r;
@@ -32,22 +32,20 @@ std::string inicial(const std::string& nome) {
     return r;
 }
 
-// Formata nome para citação bibliográfica
-// Estrutura esperada: PrimeiroNome [MeioNome...] Sobrenome
-// Resultado: SOBRENOME, PrimeiroNome I. I.
+
 std::string formatarCitacao(const std::string& nomeCompleto) {
     std::vector<std::string> partes = splitWords(nomeCompleto);
 
     if (partes.empty()) return nomeCompleto;
     if (partes.size() == 1) return toUpper(partes[0]);
 
-    // Último elemento = sobrenome em maiúsculas
+
     std::string sobrenome = toUpper(partes.back());
 
-    // Primeiro nome = completo
+
     std::string primeiroNome = partes[0];
 
-    // Nomes do meio = apenas iniciais
+  
     std::string meios;
     for (int i = 1; i < (int)partes.size() - 1; i++) {
         meios += " " + inicial(partes[i]);
