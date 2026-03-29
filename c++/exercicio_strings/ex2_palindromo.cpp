@@ -1,7 +1,3 @@
-// ============================================================
-// Exercício 2 - Verificação de Palíndromo
-// Ignora espaços na verificação
-// ============================================================
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -14,7 +10,7 @@ int main() {
     std::cout << "Digite a mensagem: ";
     std::getline(std::cin, msg);
 
-    // Remove espaços e converte para maiúsculas
+
     std::string limpa;
     for (char c : msg) {
         if (c != ' ') {
@@ -22,7 +18,7 @@ int main() {
         }
     }
 
-    // Verifica palíndromo comparando com o reverso
+  
     std::string reverso = limpa;
     std::reverse(reverso.begin(), reverso.end());
 
