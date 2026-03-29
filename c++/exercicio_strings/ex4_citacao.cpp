@@ -1,9 +1,3 @@
-// ============================================================
-// Exercício 4 - Formato Citação Bibliográfica
-// "José Antonio Santos Silva" → "SILVA, José A. S."
-// Regra: último sobrenome em MAIÚSCULAS + vírgula + primeiro nome completo
-//        + iniciais dos nomes do meio abreviados com ponto
-// ============================================================
 #include <iostream>
 #include <fstream>
 #include <sstream>
